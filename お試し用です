@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>きせかえ</title>
+<style>
+  body {
+    background: #f6f0ff;
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  .doll {
+    position: relative;
+    width: 200px;
+    margin: 40px auto;
+  }
+
+  .doll img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .buttons button {
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: none;
+    background: #e0d4ff;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h2>きせかえサイト</h2>
+
+<div class="doll">
+  <img src="base.png">
+  <img id="dress1" src="dress1.png" style="display:none;">
+  <img id="dress2" src="dress2.png" style="display:none;">
+</div>
+
+<div class="buttons">
+  <button onclick="changeDress('dress1')">ワンピ</button>
+  <button onclick="changeDress('dress2')">コート</button>
+  <button onclick="changeDress('none')">ぬぐ</button>
+</div>
+
+<script>
+function changeDress(id) {
+  document.getElementById("dress1").style.display = "none";
+  document.getElementById("dress2").style.display = "none";
+
+  if (id !== "none") {
+    document.getElementById(id).style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
